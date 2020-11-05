@@ -2,14 +2,17 @@ import React from 'react'
 import Error from 'next/error'
 import { gql } from '@apollo/client'
 import { initializeApollo } from '~/lib/apollo-client'
+import dynamic from 'next/dynamic'
 
 import APP_QUERY from '~/components/App/App.graphql'
 import PRODUCTS_QUERY from '~/components/Products/Products.graphql'
 
-import Category from '~/components/Category'
+// import Category from '~/components/Category'
+const Category = dynamic(() => import('~/components/Category'))
 import CATEGORY_QUERY from '~/components/Category/Category.graphql'
 
-import Product from '~/components/Product'
+// import Product from '~/components/Product'
+const Product = dynamic(() => import('~/components/Product'))
 import PRODUCT_QUERY from '~/components/Product/Product.graphql'
 
 const CONTENT_TYPE = {

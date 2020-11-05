@@ -3,7 +3,7 @@ if (!process.browser) {
   global.URL = URL
 }
 
-export const resolveImage = (url) => {
+export const resolveImage = (url?: string) => {
   if (!url) return undefined
 
   const { pathname } = new URL(url)
